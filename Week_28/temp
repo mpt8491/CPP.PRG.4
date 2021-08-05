@@ -1,0 +1,15 @@
+    
+    vector<string> row;
+    string line, word, temp;
+    
+    while(inFile >> temp){
+        getline(inFile, line);
+        stringstream s(line);
+
+        while (getline(s, word, ', ')) {
+            row.push_back(word);
+        }
+
+    }
+
+}
