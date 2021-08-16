@@ -12,17 +12,21 @@ void csv_import(string data[][10], int columns, int *records, string filename){
    vector< vector<string> > array;  
    vector<string> v;                
 
-   while ( getline(inFile,line, ',') ){
-      v.clear();
-      stringstream ss(line);
+while(inFile){
+  v.clear();
+  string line;
+  if(!getline(inFile,line)) break;
 
-      while (getline(ss,field)){
-         v.push_back(field);
+  istringstream ss(line);
+//  vector<string> words;
 
-      }
-         
-   array.push_back(v);
-   }
+  while(ss){
+    string s;
+    if(!getline(ss, s, ',')) break;
+    v.push_back(s);
+  }
+  array.push_back(v);
+}
 
    for (size_t i=0; i<array.size(); ++i){
       for (size_t j=0; j<array[i].size(); ++j){
@@ -45,9 +49,10 @@ int rows=0;
 };
 
 int main(){
-    int records;
-    string data[10][10];
-    csv_import(data,3,&records,"customers2.csv");
-    cout<<records<<endl;
+//    int records;
+//    string data[10][10];
+//    csv_import(data,3,&records,"customers2.csv");
+    string data[10][10]; int records; csv_import(data,3,&records,"customers.csv"); if(data[1][0] == "Fred");
+//      cout<<records<<endl;
     return 0;
 };

@@ -45,9 +45,10 @@ int rows=0;
 };
 
 int main(){
-    int records;
-    string data[10][10];
-    csv_import(data,3,&records,"customers2.csv");
-    cout<<records<<endl;
+//    int records;
+//    string data[10][10];
+//    csv_import(data,3,&records,"customers2.csv");
+    string data[10][10]; int records; csv_import(data,3,&records,"customers.csv"); if(data[1][0] == "Fred");
+//      cout<<records<<endl;
     return 0;
 };
